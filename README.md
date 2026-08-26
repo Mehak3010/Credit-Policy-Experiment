@@ -4,6 +4,69 @@ A statistical and credit-risk analysis of a simulated lending-policy change, eva
 
 ---
 
+## Key Results
+
+The simulated policy produced a measurable reduction in default risk, but also reduced loan approvals.
+
+| Metric | Control | Treatment | Impact |
+|---|---:|---:|---:|
+| Default Rate | 20.10% | 18.91% | -1.19 pp |
+| Approval Rate | 100.00% | 97.58% | -2.42 pp |
+| Expected Loss | $865.64M | $782.00M | -$83.64M |
+
+### Statistical Evidence
+
+- **Default reduction:** 1.19 percentage points
+- **Relative reduction:** 5.93%
+- **95% CI:** [-1.33%, -1.06%]
+- **Z-statistic:** -17.162
+- **p-value:** 2.55 × 10⁻⁶⁶
+- **Actual experiment population:** 1,302,848
+- **Required sample for 1.2 pp effect:** approximately 34,182
+
+### Economic Tradeoff
+
+- **Additional rejections:** approximately 15,752
+- **Modeled expected-loss reduction:** 9.66%
+- **Break-even contribution per additional rejection:** approximately $5,310
+
+> **Key conclusion:** The simulated treatment reduces default risk and modeled expected loss, but the policy should only be considered economically attractive if the credit-loss benefit justifies the value of the additional rejected applications.
+
+**Important:** The experiment and treatment outcomes are simulated. Expected-loss results are modeled using illustrative LGD assumptions and loan amount as an EAD proxy. They should not be interpreted as realized financial savings or profit.
+
+---
+
+## Explore the Analysis
+
+The project is organized as a sequential analytical workflow:
+
+| Notebook | Focus |
+|---|---|
+| `01_data_generation.ipynb` | Experiment population and policy simulation |
+| `02_eda.ipynb` | Data quality, distributions, and borrower/loan patterns |
+| `03_hypothesis_testing.ipynb` | Policy effect and statistical significance |
+| `04_power_analysis.ipynb` | Sample size, statistical power, and MDE |
+| `05_logistic_regression.ipynb` | Borrower risk modeling and risk segmentation |
+| `06_expected_loss.ipynb` | Expected loss and economic tradeoff |
+
+**Workflow:**
+
+```text
+Data
+  ↓
+EDA
+  ↓
+Experiment
+  ↓
+Statistical Evidence
+  ↓
+Risk Modeling
+  ↓
+Credit Economics
+```
+
+---
+
 ## 1. Project Objective
 
 Credit policy decisions involve a tradeoff between **risk and growth**.
@@ -188,12 +251,12 @@ Therefore, the experiment produces the following tradeoff:
 Default rate
 20.10% → 18.91%
        ↓
-  1.19 pp reduction
+   1.19 pp reduction
 
 Approval rate
 100.00% → 97.58%
           ↓
-     2.42 pp reduction
+      2.42 pp reduction
 ```
 
 The economic analysis is therefore necessary before recommending the policy.
@@ -453,6 +516,8 @@ The notebooks are intended to be executed in sequence:
 
 Notebook 01 generates the processed experiment dataset used by the subsequent notebooks.
 
+Each later notebook builds on the outputs and analytical decisions established in the previous stages.
+
 ---
 
 ## 16. Key Learnings
@@ -534,20 +599,18 @@ Notebook 01 must be run before the subsequent notebooks because it generates the
 
 ## 19. Dashboard
 
-A dashboard layer will present the main findings from the analysis, including:
+**Power BI dashboard — currently in development.**
 
-- Control vs treatment default rate
-- Control vs treatment approval rate
-- Treatment effect
-- Confidence interval
-- Risk segmentation
-- Expected loss
-- Expected-loss savings
-- Approval tradeoff
-- Break-even contribution
-- Key assumptions
+The planned dashboard will provide an executive view of:
 
-The dashboard is intended to provide an executive-level view of the analysis while the notebooks provide the underlying methodology and calculations.
+- Default and approval tradeoffs
+- Statistical evidence
+- Borrower risk segmentation
+- Expected loss and modeled savings
+- Break-even economics
+- Key assumptions and limitations
+
+The notebooks remain the primary source for the methodology and calculations. The dashboard will serve as the decision-oriented presentation layer.
 
 ---
 
