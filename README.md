@@ -4,7 +4,6 @@ A statistical and credit-risk analysis of a simulated lending-policy change, eva
 
 ---
 
-<<<<<<< HEAD
 ## 🔎 Key Results
 
 | Metric | Result |
@@ -30,23 +29,23 @@ The project includes a five-page Power BI dashboard designed to communicate the 
 
 ### Executive Summary
 
-![Executive Summary](screenshots/01-executive-summary.png)
+![Executive Summary](dashboard/screenshots/01-executive-summary.png)
 
 ### Risk & Portfolio Analysis
 
-![Risk & Portfolio Analysis](screenshots/02-risk-portfolio.png)
+![Risk & Portfolio Analysis](dashboard/screenshots/02-risk-portfolio.png)
 
 ### Statistical Evidence
 
-![Statistical Evidence](screenshots/03-statistical-evidence.png)
+![Statistical Evidence](dashboard/screenshots/03-statistical-evidence.png)
 
 ### Economic Decision
 
-![Economic Decision](screenshots/04-economic-decision.png)
+![Economic Decision](dashboard/screenshots/04-economic-decision.png)
 
 ### Methodology & Assumptions
 
-![Methodology & Assumptions](screenshots/05-methodology.png)
+![Methodology & Assumptions](dashboard/screenshots/05-methodology.png)
 
 > **Note:** Treatment outcomes are simulated. Expected-loss estimates use illustrative grade-based LGD assumptions and loan amount as an EAD proxy.
 
@@ -118,8 +117,6 @@ Risk Modeling
   ↓
 Credit Economics
 ```
->>>>>>> ff8c6b1cbd64be0ff0ec81fb812ba4baf0e6be13
-
 ---
 
 ## 1. Project Objective
@@ -531,8 +528,6 @@ The results therefore support the following conclusion:
 
 ## 14. Project Structure
 
-## 14. Project Structure
-
 ```text
 Credit-Policy-Experiment/
 │
@@ -704,7 +699,6 @@ The planned dashboard will provide an executive view of:
 - Key assumptions and limitations
 
 The notebooks remain the primary source for the methodology and calculations. The dashboard will serve as the decision-oriented presentation layer.
->>>>>>> ff8c6b1cbd64be0ff0ec81fb812ba4baf0e6be13
 
 ---
 
