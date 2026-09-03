@@ -4,6 +4,61 @@ A statistical and credit-risk analysis of a simulated lending-policy change, eva
 
 ---
 
+## 🔎 Key Results
+
+| Metric | Result |
+|---|---:|
+| Default Rate Reduction | **1.19 pp** |
+| Relative Default Reduction | **5.93%** |
+| Approval Rate Change | **−2.42 pp** |
+| Z-Statistic | **−17.16** |
+| P-Value | **2.55 × 10⁻⁶⁶** |
+| ROC-AUC | **0.650** |
+| PR-AUC | **0.310** |
+| Modeled Expected-Loss Savings | **$83.64M** |
+| Additional Rejections | **15,752** |
+| Break-even Contribution | **$5,309.95 / rejection** |
+
+> **Important:** Treatment outcomes are simulated. Expected-loss results are modeled using illustrative grade-based LGD assumptions and loan amount as an EAD proxy.
+
+---
+
+## 📊 Power BI Dashboard
+
+The project includes a five-page Power BI dashboard designed to communicate the experiment results from an executive, statistical, risk, and economic perspective.
+
+### Executive Summary
+
+![Executive Summary](screenshots/01-executive-summary.png)
+
+### Risk & Portfolio Analysis
+
+![Risk & Portfolio Analysis](screenshots/02-risk-portfolio.png)
+
+### Statistical Evidence
+
+![Statistical Evidence](screenshots/03-statistical-evidence.png)
+
+### Economic Decision
+
+![Economic Decision](screenshots/04-economic-decision.png)
+
+### Methodology & Assumptions
+
+![Methodology & Assumptions](screenshots/05-methodology.png)
+
+> **Note:** Treatment outcomes are simulated. Expected-loss estimates use illustrative grade-based LGD assumptions and loan amount as an EAD proxy.
+
+### Power BI Report
+
+The complete `.pbix` file is available in the `dashboard/PowerBI/` directory in the repository:
+
+**[Open / Download the Power BI Report](dashboard/PowerBI/Credit-Policy-Experiment.pbix)**
+
+The `.pbix` file can be opened using **Power BI Desktop**.
+
+---
+
 ## 1. Project Objective
 
 Credit policy decisions involve a tradeoff between **risk and growth**.
@@ -30,6 +85,7 @@ The raw data is stored in:
 
 ```text
 data/raw/
+
 ├── loan.csv
 └── LCDataDictionary.xlsx
 ```
@@ -412,16 +468,30 @@ The results therefore support the following conclusion:
 
 ## 14. Project Structure
 
+## 14. Project Structure
+
 ```text
 Credit-Policy-Experiment/
 │
+├── dashboard/
+│   └── PowerBI/
+│       └── Credit-Policy-Experiment.pbix
+│
+├── screenshots/
+│   ├── 01-executive-summary.png
+│   ├── 02-risk-portfolio.png
+│   ├── 03-statistical-evidence.png
+│   ├── 04-economic-decision.png
+│   └── 05-methodology.png
+│
 ├── data/
-│   ├── raw/
-│   │   ├── loan.csv
-│   │   └── LCDataDictionary.xlsx
+│   ├── processed/
+│   │   ├── .gitkeep
+│   │   └── credit_policy_experiment.csv
 │   │
-│   └── processed/
-│       └── credit_policy_experiment.csv
+│   └── raw/
+│       ├── loan.csv
+│       └── LCDataDictionary.xlsx
 │
 ├── notebooks/
 │   ├── 01_data_generation.ipynb
@@ -431,10 +501,10 @@ Credit-Policy-Experiment/
 │   ├── 05_logistic_regression.ipynb
 │   └── 06_expected_loss.ipynb
 │
-├── dashboard/
 ├── reports/
 ├── src/
 ├── tests/
+│
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -532,22 +602,29 @@ Notebook 01 must be run before the subsequent notebooks because it generates the
 
 ---
 
-## 19. Dashboard
+## 19. Power BI Dashboard
 
-A dashboard layer will present the main findings from the analysis, including:
+The Power BI dashboard provides an executive-level view of the credit-policy analysis across five pages.
 
-- Control vs treatment default rate
-- Control vs treatment approval rate
-- Treatment effect
-- Confidence interval
-- Risk segmentation
-- Expected loss
-- Expected-loss savings
-- Approval tradeoff
-- Break-even contribution
-- Key assumptions
+### Dashboard Pages
 
-The dashboard is intended to provide an executive-level view of the analysis while the notebooks provide the underlying methodology and calculations.
+| Page | Focus |
+|---|---|
+| Executive Summary | Policy impact, default rate, approval rate, and modeled loss savings |
+| Risk & Portfolio Analysis | Credit-grade risk, risk deciles, ROC-AUC, and PR-AUC |
+| Statistical Evidence | Hypothesis testing, confidence intervals, and power analysis |
+| Economic Decision | Expected loss, savings, additional rejections, and break-even analysis |
+| Methodology & Assumptions | Experiment design, PD/LGD/EAD methodology, and limitations |
+
+The dashboard complements the Python notebooks by translating the statistical and credit-risk analysis into a business decision framework.
+
+### Power BI Report
+
+The complete `.pbix` file is available in the `dashboard/` directory:
+
+[Download the Power BI Report](dashboard/Credit-Policy-Experiment.pbix)
+
+The report can be opened using Power BI Desktop.
 
 ---
 
